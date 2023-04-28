@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+.section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+
+    &__head {
+        grid-column: 1 / -1;
+        text-align: center;
+
+        &-title {
+            text-transform: uppercase;
+        }
+
+    }
+
+    &__columns {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(20rem, 70rem));
+        gap: 5rem;
+
+        @include respond(screen_900) {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+}
