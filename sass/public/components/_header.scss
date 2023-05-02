@@ -23,7 +23,7 @@
         text-align: center;
         display: grid;
         row-gap: 3rem;
-        max-width: 85rem;
+        max-width: 120rem;
         z-index: 20;
 
         @include respond(screen_767) {

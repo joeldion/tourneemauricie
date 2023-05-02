@@ -10,7 +10,7 @@ function tma_custom_login_logo() {
             background: #fff !important;
         }
         h1 a {
-            background-image:url(<?php echo TMA_LOGO_SRC; ?>) !important;
+            background-image:url(<?php echo tma_logo_src(); ?>) !important;
             background-size: 100% !important;
             width: 200px !important;
             height: 130px !important;

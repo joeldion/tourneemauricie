@@ -9,7 +9,7 @@
 
         <h1 class="header__logo">                
             <a href="<?php echo get_home_url(); ?>" aria-label="Accueil">
-                <img src="<?php echo TMA_LOGO_SRC; ?>" alt="<?php echo get_bloginfo( 'title' ); ?>" title="<?php echo get_bloginfo( 'title' ); ?>" height="192" width="300">
+                <img src="<?php echo tma_logo_src(); ?>" alt="<?php echo get_bloginfo( 'title' ); ?>" title="<?php echo get_bloginfo( 'title' ); ?>" height="192" width="300">
             </a>                              
         </h1>
         
@@ -24,6 +24,8 @@
                 <li class="menu__item"><a href="#" data-target="#listing-3">Tournée Mékinac</a></li>
             </ul>
         </nav>
+
+        
 
         <!-- <div class="header__cta">
             <a href="#" class="scroll" data-target="#map">Voir l'itinéraire</a>

@@ -5,7 +5,9 @@ add_action( 'wp_enqueue_scripts', 'tma_enqueue_public_scripts' );
 add_action( 'admin_enqueue_scripts', 'tma_enqueue_admin_styles' );
 add_action( 'admin_enqueue_scripts', 'tma_enqueue_admin_scripts' );
 
-$tma_file_version = current_user_can( 'administrator' ) ? time() : TMA_VER;
+function tma_get_file_version() {
+    return current_user_can( 'administrator' ) ? time() : TMA_VER;
+}
 
 /*
  * Public Enqueue
@@ -16,7 +18,7 @@ function tma_enqueue_public_styles() {
         'tma-style-public',
         TMA_URL . 'assets/css/style-public.css',
         [],
-        $tma_file_version,
+        tma_get_file_version(),
         'all'
     );
 
@@ -28,7 +30,7 @@ function tma_enqueue_public_scripts() {
         'tma-script-public',
         TMA_URL . 'assets/js/script-public.js',
         ['jquery'],
-        $tma_file_version,
+        tma_get_file_version(),
         true
     );
 
@@ -49,7 +51,7 @@ function tma_enqueue_admin_styles() {
         'tma-style-admin',
         TMA_URL . 'assets/css/style-admin.css',
         [],
-        $tma_file_version,
+        tma_get_file_version(),
         'all'
     );
 
@@ -64,7 +66,7 @@ function tma_enqueue_admin_scripts() {
         'tma-script-admin',
         TMA_URL . 'assets/js/script-admin.js',
         ['jquery'],
-        $tma_file_version,
+        tma_get_file_version(),
         true
     );
 

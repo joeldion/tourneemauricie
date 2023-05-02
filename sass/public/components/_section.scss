@@ -17,7 +17,7 @@
 
     &__columns {
         display: grid;
-        grid-template-columns: repeat(2, minmax(20rem, 70rem));
+        grid-template-columns: repeat(2, minmax(20rem, 60rem));
         gap: 5rem;
 
         @include respond(screen_900) {

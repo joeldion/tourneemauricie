@@ -1,6 +1,6 @@
 <?php 
 /*
- * Setting: section Map
+ * Setting: Map
  */
 
 add_settings_section(

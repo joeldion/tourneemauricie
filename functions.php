@@ -8,7 +8,7 @@ defined('TMA_BASE') or define('TMA_BASE', __DIR__ . '/');
 defined('TMA_URL') or define('TMA_URL', get_template_directory_uri() . '/');
 defined('TMA_INC') or define('TMA_INC', TMA_BASE . 'inc/');
 defined('TMA_VER') or define('TMA_VER', '0.0.1');
-defined('TMA_LOGO_SRC') or define('TMA_LOGO_SRC', esc_url( wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' )[0] ) );
+defined('TMA_DOMAIN') or define('TMA_DOMAIN', 'tourneemauricie');
 defined('TMA_GLOBALS') or define('TMA_GLOBALS', [
     'baseURL'   =>  get_site_url(),
     'wpAjaxURL' =>  admin_url('admin-ajax.php'),
@@ -24,6 +24,7 @@ defined('TMA_LOCALS') or define('TMA_LOCALS', [
  */
 add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' );
+add_theme_support( 'custom-logo' );
 add_theme_support( 'html5', [ 'search-form' ] );
 add_theme_support( 'menus' );
 
@@ -37,7 +38,9 @@ $includes = [
     'helper-functions',
     'image-sizes',
     'login',
-    'settings/settings'
+    'cpt/participants/init',
+    'cpt/partners/init',
+    'settings/init'
 ];
 foreach ($includes as $inc) {
     require_once(TMA_INC . $inc . '.php');

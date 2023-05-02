@@ -41,7 +41,7 @@ function tma_intro_image_markup() {
 
     global $post;
     $intro_image_id = get_option('tma_intro_image');
-    if ( $intro_image_id > 0 ) $has_image = true;
+    $has_image = $intro_image_id > 0 ? true : false;
     $image_preview = $has_image ? wp_get_attachment_image_url($intro_image_id, 'large') : '';
     ?>
     <table class="form-table tma-meta-box">
