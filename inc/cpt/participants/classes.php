@@ -20,17 +20,17 @@ class TMAParticipant {
         }
 
         $this->title = get_the_title( $this->id );
-        $this->short_desc = esc_html( get_post_meta( $this->id, '_tma_part_desc', true ) );
-        $this->long_desc = wpautop( get_post_meta( $this->id, '_tma_part_long_desc', true ) );
-        $this->region = esc_html( get_post_meta( $this->id, '_tma_part_region', true ) );
-        $this->address = esc_html( get_post_meta( $this->id, '_tma_part_address', true ) );        
-        $this->city = esc_html( get_post_meta( $this->id, '_tma_part_city', true ) );
-        $this->postal_code = esc_html( get_post_meta( $this->id, '_tma_part_postal_code', true ) );
+        $this->short_desc = esc_html( get_post_meta( $this->id, '_tma_desc', true ) );
+        $this->long_desc = wpautop( get_post_meta( $this->id, '_tma_long_desc', true ) );
+        $this->region = esc_html( get_post_meta( $this->id, '_tma_region', true ) );
+        $this->address = esc_html( get_post_meta( $this->id, '_tma_address', true ) );        
+        $this->city = esc_html( get_post_meta( $this->id, '_tma_city', true ) );
+        $this->postal_code = esc_html( get_post_meta( $this->id, '_tma_postal_code', true ) );
         $this->full_address = $this->address . ', ' . $this->city . ' ' . $this->postal_code;
-        $this->gmap_url = esc_url( get_post_meta( $this->id, '_tma_part_gmap_url', true ) );
-        $this->phone = esc_html( get_post_meta( $this->id, '_tma_part_phone', true ) );
-        $this->email = esc_html( get_post_meta( $this->id, '_tma_part_email', true ) );
-        $this->website = esc_url( get_post_meta( $this->id, '_tma_part_website_link', true ) );
+        $this->gmap_url = esc_url( get_post_meta( $this->id, '_tma_gmap_url', true ) );
+        $this->phone = esc_html( get_post_meta( $this->id, '_tma_phone', true ) );
+        $this->email = esc_html( get_post_meta( $this->id, '_tma_email', true ) );
+        $this->website = esc_url( get_post_meta( $this->id, '_tma_website', true ) );
 
     }
 

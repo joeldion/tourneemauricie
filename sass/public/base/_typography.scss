@@ -19,13 +19,17 @@ h6 { font-size: 2rem; }
 h5, h6 { font-weight: 400; }
 
 
-div {
+div,
+p,
+li {
     font-size: 1.8rem;
     font-weight: 400;
     font-family: $font-primary;
 }
 
-p {
+p, 
+li,
+span {
     padding-bottom: 2.4rem;
 }
 

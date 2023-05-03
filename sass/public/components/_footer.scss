@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+.footer {
+    // background-color: $color-maroon;
+    height: 12rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 13rem max-content;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+    &__copyright {
+        font-size: 1.4rem;
+    }
+
+}

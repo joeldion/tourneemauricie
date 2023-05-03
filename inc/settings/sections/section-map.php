@@ -5,14 +5,14 @@
 
 add_settings_section(
     'tma-settings-map-section',
-    'Carte',
+    esc_html__( 'Map', TMA_DOMAIN ),
     'tma_map_settings_section_callback',
     'tma-settings-page'
 );
 
 add_settings_field(
     'tma_map_title',
-    'Titre de la section',
+    esc_html__( 'Section Title', TMA_DOMAIN ),
     'tma_map_title_markup',
     'tma-settings-page',
     'tma-settings-map-section'
@@ -20,7 +20,7 @@ add_settings_field(
 
 add_settings_field(
     'tma_map_text',
-    'Texte d\'introduction',
+    esc_html__( 'Introduction Text', TMA_DOMAIN ),
     'tma_map_text_markup',
     'tma-settings-page',
     'tma-settings-map-section'
@@ -34,7 +34,7 @@ register_setting(
         'sanitize_callback' =>  'sanitize_text_field'
     ]
 );
-register_setting( 'tma-settings', 'tma_map_text' );
+register_setting( 'tma-settings', 'tma_map_text', 'tma_sanitize_lite_editor_field' );
 
 function tma_map_settings_section_callback() {}
 
@@ -45,15 +45,5 @@ function tma_map_title_markup() {
 }
 
 function tma_map_text_markup() {
-
-    wp_editor(
-        get_option( 'tma_map_text' ),
-        'tma_map_text',
-        [
-            'media_buttons' => false,
-            'drag_drop_upload' => false,
-            'textarea_rows' => 5
-        ]
-    );
-
+    tma_lite_editor( 'tma_map_text', get_option('tma_map_text') );
 }

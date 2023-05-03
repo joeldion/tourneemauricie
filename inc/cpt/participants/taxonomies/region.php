@@ -9,7 +9,7 @@ function tma_participant_region_taxonomy() {
             'public'            => false,
             'show_ui'           => true,
             'meta_box_cb'       => false,
-            'rewrite'           => [ 'slug' => esc_html( strtolower( _nx('Region', 'Regions', 2, 'Region name', TMA_DOMAIN ) ) ) ], 
+            'rewrite'           => [ 'slug' => esc_html( strtolower( _nx( 'Region', 'Regions', 2, 'Region name', TMA_DOMAIN ) ) ) ], 
             'capabilities'      => [
                 'manage_terms'  => 'manage_options',
                 'edit_terms'    => 'manage_options',
@@ -39,11 +39,12 @@ add_action( 'init', 'tma_participant_region_taxonomy' );
 // Participant city region selector (ADD NEW FORM)
 function tma_region_selector_add_form_markup( $term, $taxonomy = 'tma_participant_region' ) {
 
-    $saved_region = get_term_meta( $term->term_id, '_tma_region', true );
     ?>
     <div class="form-field">
-        <label for="tma-region"><?php esc_html_e( 'Region', TMA_DOMAIN ); ?></label>
-        <?php tma_get_participant_region_selector(); ?>
+        <label for="tma-region">
+            <?php echo esc_html( _nx( 'Region', 'Regions', 1, 'Region name', TMA_DOMAIN ) ); ?>
+        </label>
+        <?php tma_get_participant_region_selector( $term ); ?>
     </div>
     <br>
     <?php
@@ -58,7 +59,9 @@ function tma_region_selector_edit_form_markup( $term, $taxonomy = 'tma_participa
     ?>
     <tr class="form-field">
         <th>
-            <label for="tma-region"><?php esc_html_e( 'Region', TMA_DOMAIN ); ?></label>
+            <label for="tma-region">
+                <?php echo esc_html( _nx( 'Region', 'Regions', 1, 'Region name', TMA_DOMAIN ) ); ?>
+            </label>
         </th>
         <td>
             <?php tma_get_participant_region_selector( $term ); ?>

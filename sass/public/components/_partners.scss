@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.partners {
+    grid-template-columns: repeat(3, 20rem);
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.partner {
+    display: grid;
+    align-items: center;
+    width: 20rem;
+    height: 10rem;
+}

@@ -19,7 +19,7 @@ function tma_get_participant_region_selector( $term ) {
     ?>
         <select name="tma-region" id="tma-region">
         <?php foreach($regions as $region): ?>
-                <option value="<?php echo $region->term_id; ?>" <?php selected($saved_region, $region->term_id, true); ?>>
+                <option value="<?php echo $region->term_id; ?>" <?php selected( $saved_region, $region->term_id, true ); ?>>
                     <?php echo $region->name; ?>
                 </option>
         <?php endforeach; ?>
@@ -34,7 +34,7 @@ function tma_get_participant_region_selector( $term ) {
 /*
  * Get Participant City Selector
  */
-function tma_get_participant_city_selector() {
+function tma_get_participant_city_selector( $post_id ) {
 
     $args = [
         'taxonomy'      =>  'tma_participant_city',
@@ -42,16 +42,16 @@ function tma_get_participant_city_selector() {
         'order'         =>  'asc',
         'hide_empty'    =>  false,
     ];
-    $cities = get_terms($args);
-    $saved_city = get_term_meta( $term->term_id, '_tma_city', true );
-
+    $types = get_terms( $args );
+    $saved_city = get_the_terms( $post_id, 'tma_participant_city' )[0];
+    
     ob_start();
 
-    if (!empty($cities)): 
+    if ( !empty($types) ):        
     ?>
         <select name="tma-city" id="tma-city">
-        <?php foreach($cities as $city): ?>
-                <option value="<?php echo $city->term_id; ?>" <?php selected($saved_city, $city->term_id, true); ?>>
+        <?php foreach( $types as $city ): ?>
+                <option value="<?php echo $city->term_id; ?>" <?php selected( $saved_city->term_id, $city->term_id, true ); ?>>
                     <?php echo $city->name; ?>
                 </option>
         <?php endforeach; ?>
@@ -66,7 +66,7 @@ function tma_get_participant_city_selector() {
 /*
  * Get Participant Type Selector
  */
-function tma_get_participant_type_selector() {
+function tma_get_participant_type_selector( $post_id ) {
 
     $args = [
         'taxonomy'      =>  'tma_participant_type',
@@ -74,15 +74,16 @@ function tma_get_participant_type_selector() {
         'order'         =>  'asc',
         'hide_empty'    =>  false,
     ];
-    $cities = get_terms($args);
+    $types = get_terms($args);
+    $saved_type = get_the_terms( $post_id, 'tma_participant_type')[0];
 
     ob_start();
 
-    if (!empty($cities)): 
+    if (!empty($types)): 
     ?>
         <select name="tma-type" id="tma-type">
-        <?php foreach($cities as $type): ?>
-                <option value="<?php echo $type->term_id; ?>" <?php selected($saved_region, $type->term_id, true); ?>>
+        <?php foreach($types as $type): ?>
+                <option value="<?php echo $type->term_id; ?>" <?php selected( $saved_type->term_id, $type->term_id, true ); ?>>
                     <?php echo $type->name; ?>
                 </option>
         <?php endforeach; ?>

@@ -10,7 +10,7 @@ function tma_participant_location_meta_box() {
 
     add_meta_box(
         'tma_participant_location',
-        esc_html__( 'Location' ),
+        esc_html__( 'Location', TMA_DOMAIN ),
         'tma_participant_location_callback',
         'tma_participant',
         'normal',
@@ -25,23 +25,19 @@ function tma_participant_location_callback() {
 
     global $post;
     $id             = $post->ID;
-    $region         = esc_html( get_post_meta( $id, '_tma_region', true ) );
     $address        = esc_html( get_post_meta( $id, '_tma_address', true ) );
-    // $city           = esc_html( get_post_meta( $id, '_tma_city', true ) );
-    $city           = intval( get_the_terms( $id, 'tma_participant_city') )[0];
     $postal_code    = esc_html( get_post_meta( $id, '_tma_postal_code', true ) );
     $gmap_url       = esc_url( get_post_meta( $id, '_tma_gmap_url', true ) );
     $coord          = esc_html( get_post_meta( $id, '_tma_coord', true ) );
-    $lat            = intval( explode( ',', $coord )[0] );
-    $lng            = intval( explode( ',', $coord )[1] );
+    // $lat            = intval( explode( ',', $coord )[0] );
+    // $lng            = intval( explode( ',', $coord )[1] );
     ?>
     <table class="form-table tma-form">
         <tbody>
-            <?php var_dump( get_the_terms( $id, 'tma_participant_city') ); ?>
             <tr valign="top">
                 <th>
                     <label for="tma-address">
-                        <span class="option-title"><?php esc_html_e( 'Civic address', TMA_DOMAIN ); ?></span>
+                        <span class="option-title"><?php esc_html_e( 'Civic Address', TMA_DOMAIN ); ?></span>
                     </label>
                 </th>
                 <td>
@@ -51,17 +47,17 @@ function tma_participant_location_callback() {
             <tr valign="top">
                 <th>
                     <label for="tma-city">
-                        <span class="option-title"><?php esc_html_e( 'City / town', TMA_DOMAIN ); ?></span>
+                        <span class="option-title"><?php esc_html_e( 'City / Town', TMA_DOMAIN ); ?></span>
                     </label>
                 </th>
                 <td>
-                    <?php tma_get_participant_city_selector(  ); ?>
+                    <?php tma_get_participant_city_selector($id); ?>
                 </td>
             </tr>
             <tr valign="top">
                 <th>
                     <label for="tma-postal-code">
-                        <span class="option-title"><?php esc_html_e( 'Postal code', TMA_DOMAIN ); ?></span>
+                        <span class="option-title"><?php esc_html_e( 'Postal Code', TMA_DOMAIN ); ?></span>
                     </label>
                 </th>
                 <td>
@@ -75,7 +71,7 @@ function tma_participant_location_callback() {
                     </label>
                 </th>
                 <td>
-                    <input type="url" size="80" id="tma-gmap-url" name="tma-gmap-url" value="<?php echo $gmap_url; ?>">
+                    <input type="url" size="50" id="tma-gmap-url" name="tma-gmap-url" value="<?php echo $gmap_url; ?>">
                 </td>
             </tr>        
         </tbody>
@@ -103,13 +99,13 @@ function tma_participant_location_meta_box_save( $post_id ) {
 
     $data_region = sanitize_textarea_field( $_POST[ 'tma-region' ] );
     $data_address = sanitize_text_field( $_POST[ 'tma-address' ] );
-    $data_city = sanitize_text_field( $_POST[ 'tma-city' ] );
+    $data_city = intval( $_POST[ 'tma-city' ] );
     $data_postal_code = sanitize_text_field( $_POST[ 'tma-postal-code' ] );
     $data_gmap_url = sanitize_text_field( $_POST[ 'tma-gmap-url' ] );    
     $data_coord = sanitize_text_field( $_POST[ 'tma-coord' ] );
     update_post_meta( $post_id, '_tma_region', $data_region );
     update_post_meta( $post_id, '_tma_address', $data_address );
-    wp_set_post_terms( $post_id, $data_city, '_tma_participant_city' );
+    wp_set_object_terms( $post_id, $data_city, 'tma_participant_city' );
     update_post_meta( $post_id, '_tma_postal_code', $data_postal_code );
     update_post_meta( $post_id, '_tma_gmap_url', $data_gmap_url );
     update_post_meta( $post_id, '_tma_coord', $data_coord );

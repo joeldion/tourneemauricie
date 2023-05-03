@@ -33,14 +33,15 @@ add_theme_support( 'menus' );
  */
 $includes = [
     'clean-admin-menu',
+    'cpt/participants/init',
+    'cpt/partners/init',
     'detect-mobile',
     'enqueue',
     'helper-functions',
     'image-sizes',
-    'login',
-    'cpt/participants/init',
-    'cpt/partners/init',
-    'settings/init'
+    'login',    
+    'settings/init',
+    'svg-support'
 ];
 foreach ($includes as $inc) {
     require_once(TMA_INC . $inc . '.php');

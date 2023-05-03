@@ -10,7 +10,7 @@ function tma_participant_contact_meta_box() {
 
     add_meta_box(
         'tma_participant_contact',
-        esc_html__( 'Contact' ),
+        esc_html__( 'Contact Info', TMA_DOMAIN ),
         'tma_participant_contact_callback',
         'tma_participant',
         'normal',
@@ -34,7 +34,7 @@ function tma_participant_contact_callback() {
             <tr valign="top">
                 <th>
                     <label for="tma-phone">
-                        <span class="option-title"><?php esc_html_e('Phone', TMA_DOMAIN); ?></span>
+                        <span class="option-title"><?php esc_html_e( 'Phone', TMA_DOMAIN ); ?></span>
                     </label>
                 </th>
                 <td>
@@ -44,17 +44,17 @@ function tma_participant_contact_callback() {
             <tr valign="top">
                 <th>
                     <label for="tma-email">
-                        <span class="option-title"><?php esc_html_e('Email'); ?></span>
+                        <span class="option-title"><?php esc_html_e( 'Email' ); ?></span>
                     </label>
                 </th>
                 <td>
-                    <input type="email" size="80" id="tma-email" name="tma-email" value="<?php echo $email; ?>">
+                    <input type="email" size="50" id="tma-email" name="tma-email" value="<?php echo $email; ?>">
                 </td>
             </tr>
             <tr valign="top">
                 <th>
                     <label for="tma-website">
-                        <span class="option-title"><?php esc_html_e('Website'); ?></span>
+                        <span class="option-title"><?php esc_html_e( 'Website' ); ?></span>
                     </label>
                 </th>
                 <td>

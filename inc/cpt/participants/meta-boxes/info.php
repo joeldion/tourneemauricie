@@ -35,10 +35,9 @@ function tma_participant_info_callback() {
                     <label for="tma-type">
                         <span class="option-title"><?php esc_html_e( 'Type', TMA_DOMAIN ); ?></span>
                     </label>
-                </th>
-                <td>                    
-                    
-                    <input type="radio" id="tma-type" name="tma-type" value="">
+                </th>             
+                <td>
+                    <?php tma_get_participant_type_selector($id); ?>
                 </td>
             </tr>
             <tr valign="top">
@@ -83,8 +82,10 @@ function tma_participant_info_meta_box_save( $post_id ) {
         return $post_id;
     }
 
+    $data_type = intval( $_POST['tma-type'] );
     $data_short_desc = sanitize_text_field( $_POST['tma-short-desc'] );
     $data_long_desc = sanitize_textarea_field( $_POST['tma-long-desc'] );
+    wp_set_object_terms( $post_id, $data_type, 'tma_participant_type' );
     update_post_meta( $post_id, '_tma_short_desc', $data_short_desc );
     update_post_meta( $post_id, '_tma_long_desc', $data_long_desc );
 

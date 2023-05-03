@@ -38,10 +38,7 @@ const mediaUpload = () => {
             });
             
             mediaUploader.on('select', function() {
-                attachment = mediaUploader.state().get('selection').first().toJSON();
-                console.log('preview:');
-                console.log(mediaPreview);
-                console.log(attachment);
+                attachment = mediaUploader.state().get('selection').first().toJSON();              
                 mediaImage.value = attachment.id;
                 mediaPreview.style.backgroundImage = 'url(' + attachment.url + ')';
                 mediaPreview.classList.add('visible');

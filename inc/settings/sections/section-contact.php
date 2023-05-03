@@ -5,14 +5,14 @@
 
 add_settings_section(
     'tma-settings-contact-section',
-    'Informations de contact',
+    esc_html__( 'Contact Info', TMA_DOMAIN ),
     'tma_contact_settings_section_callback',
     'tma-settings-page'
 );
 
 add_settings_field(
     'tma_contact_title',
-    'Titre de la section',
+    esc_html__( 'Section Title', TMA_DOMAIN ),
     'tma_contact_title_markup',
     'tma-settings-page',
     'tma-settings-contact-section'
@@ -20,7 +20,7 @@ add_settings_field(
 
 add_settings_field(
     'tma_contact_phone',
-    'Téléphone',
+    esc_html__( 'Phone' ),
     'tma_contact_phone_markup',
     'tma-settings-page',
     'tma-settings-contact-section'
@@ -28,7 +28,7 @@ add_settings_field(
 
 add_settings_field(
     'tma_contact_email',
-    'Courriel',
+    esc_html__( 'Email' ),
     'tma_contact_email_markup',
     'tma-settings-page',
     'tma-settings-contact-section'

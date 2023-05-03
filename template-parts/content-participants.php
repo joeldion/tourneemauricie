@@ -1,16 +1,15 @@
 <?php 
 /*
- * Listings
+ * Participant Listings
  */
 ?>
-<section id="listing-1" class="section listing">
+<section id="listing-1" class="section participant">
     <div class="section__head">
         <h2 class="section__head-title">
-            <?php //esc_html_e(get_option('tma_listing_1_title')); ?>
-            Tournée des Chenaux
+            <?php esc_html_e( get_option('tma_participants_section_title_1' ) ); ?>
         </h2>
         <div class="section__head-text">
-            <?php echo wpautop( get_option('tma_listing_1_text' )); ?>
+            <?php //echo wpautop( get_option('tma_participants_section_title_1' )); ?>
         </div>
     </div>
     <div class="section__columns">
@@ -56,8 +55,7 @@
 <section id="listing-2" class="section listing">
     <div class="section__head">
         <h2 class="section__head-title">
-            <?php //esc_html_e(get_option( 'tma_listing_2_title' )); ?>
-            Tournée Maski
+            <?php esc_html_e( get_option('tma_participants_section_title_2' ) ); ?>
         </h2>
         <div class="section__head-text">
             <?php echo wpautop( get_option( 'tma_listing_2_text' ) ); ?>
@@ -106,8 +104,7 @@
 <section id="listing-3" class="section listing">
     <div class="section__head">
         <h2 class="section__head-title">
-            <?php //esc_html_e(get_option( 'tma_listing_3_title' )); ?>
-            Tournée Mékinac
+            <?php esc_html_e( get_option('tma_participants_section_title_3' ) ); ?>
         </h2>
         <div class="section__head-text">
             <?php echo wpautop( get_option( 'tma_listing_3_text' ) ); ?>
