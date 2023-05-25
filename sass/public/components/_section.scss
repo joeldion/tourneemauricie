@@ -33,9 +33,14 @@
 
         }
 
-        &-text {
-            max-width: 80rem;
-            margin: 0 auto;
+    }
+
+    &__text {        
+        max-width: 80rem;
+        margin: 0 auto;
+        
+        &--center {
+            text-align: center;
         }
 
     }

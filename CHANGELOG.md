@@ -6,3 +6,5 @@ Version 1.1.0
 - Removed intro image and button
 - Moved header menu under intro
 - Added list to intro (hard code to be programmed later)
+- Changed partners logos layout
+- Changed footer layout

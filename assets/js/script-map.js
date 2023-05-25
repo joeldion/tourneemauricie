@@ -118,8 +118,8 @@ function initMap() {
                         infoWindowContent = "<div class='marker' style='width:150px;min-height:100px'>";
                         infoWindowContent += "<h4 class='marker__title'>" + location.title + "</h4>";
                         infoWindowContent += "<a class='marker__address' href='" + location.gmap_url + "' target='_blank'>" + location.address + "</a>";
-                        infoWindowContent += "<a class='marker__phone' href='tel:+1" + location.phone.replace(/\-|\s/g, "") + "'>" + location.phone + "</a>";
-                        infoWindowContent += "<a class='marker__email' href='mailto:" + location.email + "'>" + locals.email_label + "</a>";
+                        //infoWindowContent += "<a class='marker__phone' href='tel:+1" + location.phone.replace(/\-|\s/g, "") + "'>" + location.phone + "</a>";
+                        //infoWindowContent += "<a class='marker__email' href='mailto:" + location.email + "'>" + locals.email_label + "</a>";
                         infoWindowContent += "<a class='marker__website' href='" + location.website + "' target='_blank'>" + locals.more_info + "</a>";
                         infoWindowContent += "</div>";
                         infoWindow.setContent(infoWindowContent);

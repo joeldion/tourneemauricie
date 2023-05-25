@@ -2,28 +2,30 @@
 
 .footer {
     grid-column: margin-left-start / margin-right-end;
-    height: 12rem;
     padding: 2rem;
     display: grid;
-    grid-template-columns: 13rem max-content;
+    grid-template-columns: repeat(4, 15rem);
+    grid-template-rows: repeat(2, 6rem); 
     align-items: center;
     justify-content: center;
-    gap: 5rem;
-    // border-top: 1px solid rgba(0, 0, 0, 0.2);
+    column-gap: 4rem;
 
     @include respond(screen_767) {
-        grid-template-columns: max-content;
-        gap: 2rem;
+        grid-template-columns: repeat(2, 15rem);
+        row-gap: 4rem;
     }
 
     &__logo {
         margin: 0 auto;
-        max-width: 13rem;
+        max-width: 15rem;
+        max-height: 6rem;
     }
 
     &__copyright {
+        grid-column: 1 / -1;
         font-size: 1.4rem;
-        padding: 1.5rem 0;
+        // padding: 1.5rem 0;
+        text-align: center;
     }
 
 }

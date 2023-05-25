@@ -8,12 +8,15 @@
         <h2 class="section__head-title">
             <?php esc_html_e( get_option( 'tma_map_section_title' ) ); ?>
         </h2>
-        <div class="section__head-text">
-            <?php echo wpautop( get_option( 'tma_map_section_text' ) ); ?>
-        </div>
+    </div>
+    <div class="section__text">
+        <?php echo wpautop( get_option( 'tma_map_section_text' ) ); ?>
     </div>
     <div class="map-container">
         <div id="gmap" class="gmap"></div>
+    </div>
+    <div class="section__text section__textsection__text--center">
+        <p>Cochez le type de visite selon vos intérêts :</p>
     </div>
     <?php get_map_filters(); ?>
 </section>

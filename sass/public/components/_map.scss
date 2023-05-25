@@ -26,6 +26,7 @@
         color: $color-maroon;
         font-size: 1.6rem;
         padding-bottom: 0;
+        max-width: 95%;
     }
 
     a {
@@ -73,7 +74,7 @@ button {
     gap: 2rem;
     
     @include respond(screen_767) {
-        margin-top: 2rem;
+        // margin-top: 2rem;
         gap: 4rem;
     }
 

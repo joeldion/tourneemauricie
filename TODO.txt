@@ -1,0 +1,7 @@
+- séparer tournées en 3 pages
+- formulaires courriel en modal
+- map : icônes 
+- map : filtre catégories
+- page inscription
+- migration sur VPS
+- SSL
