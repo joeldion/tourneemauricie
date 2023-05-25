@@ -4,36 +4,21 @@
 
     &__list {
         list-style: none;
-        display: grid;
-        grid-template-columns: repeat(3, max-content);
-        justify-content: center;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0 auto;
         gap: 5rem;
+
+        @include respond(screen_900) {
+            flex-direction: column;
+            max-width: 25rem;
+        }
 
     }
 
     &__item {
-        color: $color-white;
-        min-width: 30rem;
-        height: 5rem;
-        border-radius: 2rem;
-        box-shadow: 2px 2px 5px $color-gray-d;
-        transition: all .4s ease;
-
-        &:nth-child(1) {
-            background-color: $color-green-d;
-        }
-
-        &:nth-child(2) {
-            background-color: $color-green-m;
-        }
-
-        &:nth-child(3) {
-            background-color: $color-green-l;
-        }
-
-        &:hover {
-            background-color: $color-maroon;
-        }
+        min-width: 25rem;
+        padding: 0;      
 
         > a {
             color: $color-white;
@@ -42,6 +27,114 @@
             align-items: center;
         }
 
+        &:nth-child(1) {
+            background-color: $color-burgundy-d;            
+        }
+
+        &:nth-child(2) {
+            background-color: $color-meadow-d;
+        }
+
+        &:nth-child(3) {
+            background-color: $color-orange-d;
+        }
+
+        @include button();
+
     }
+
+}
+
+.top-menu {
+    width: 100%;
+    height: 5rem;
+    background-color: $color-red-d;
+    position: fixed;
+    z-index: 40;    
+    // border-bottom: 1px solid $color-gray-l;
+    transition: height .7s ease;
+
+    @include respond(screen_767) {
+        height: 8rem;
+
+        &.collapsed {
+            height: 100vh;
+            padding: 2rem;            
+        }
+
+        &__hamburger {
+            width: 4rem;
+            height: 4rem;
+            position: absolute;
+            z-index: inherit;          
+            top: 2rem;
+            left: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            &::before {
+                content: '';
+                width: 100%;
+                height: 100%;            
+                background-image: url($icon-menu);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+            }
+
+            &.collapsed {                
+                &::before {
+                    background-image: url($icon-close);
+                    background-size: 80%;
+                }
+            }
+
+        }
+        
+    }
+    
+    &__list {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100%;
+        transition: opacity .7s ease;
+
+        @include respond(screen_767) {
+            flex-direction: column;
+            opacity: 0;
+            z-index: -1;
+            
+            &.collapsed {
+                opacity: 1;
+                z-index: 40;
+            }
+
+        }
+
+    }
+
+    &__item {
+        padding-bottom: 0;
+
+        @include respond(screen_767) {
+            font-size: 3rem;
+            margin: 2rem 0;
+        }
+
+        > a {
+            text-transform: uppercase;
+            color: $color-white;
+
+            &:hover {
+                color: $color-white;
+            }
+
+        }
+
+    }
+
 
 }

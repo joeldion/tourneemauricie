@@ -1,20 +1,36 @@
 // COLORS
 $color-white: #fff;
-$color-gray-d: #1d1d1b;
-$color-gray-l: #eaeaea;
-$color-maroon: #8b1d43;
-$color-green-xd: #22411d;
-$color-green-d: #456d2b;
-$color-green-m: #6c9e2e;
-$color-green-l: #8fa925;
-$color-green-xl: #b8c513;
+$color-gray-d: #1D1D1B;
+$color-gray-l: #F3F3F3;
+$color-maroon: #891E43;
+$color-burgundy-l: #C74D76;
+$color-burgundy-d: #B42B5F;
+$color-red-l: #ed6e7b;
+$color-red-m: #ea5161;
+$color-red-d: #e72749;
+$color-meadow-l: #6ec2b0;
+$color-meadow-d: #17af93;
+$color-green-xd: #22411E;
+$color-green-d: #446D2B;
+$color-green-m: #6D9B2E;
+$color-green-l: #8EA825;
+$color-green-xl: #B7C517;
+$color-yellow-l: #ffd835;
+$color-yellow-d: #fdc422;
+$color-orange-l: #f7a838;
+$color-orange-d: #f39200;
 
 // FONTS
 $font-primary: 'Poppins', 'sans-serif';
 $font-secondary: 'Ruda', 'sans-serif';
 
 // ICONS
-$icon-marker: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23' + str-slice('#{$color-green-d}', 2) + '" width="32" height="32"><path d="M16 0A10 10 0 0 0 6 10c0 10 10 22 10 22s10-12 10-22A10 10 0 0 0 16 0zm0 16a6 6 0 1 1 0-12 6 6 0 1 1 0 12z"/></svg>';
-$icon-phone: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23' + str-slice('#{$color-green-d}', 2) + '" width="32" height="32"><path d="M22 20c-2 2-2 4-4 4s-4-2-6-4-4-4-4-6 2-2 4-4-4-8-6-8-6 6-6 6c0 4 4.109 12.109 8 16s12 8 16 8c0 0 6-4 6-6s-6-8-8-6z"/></svg>';
-$icon-email: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23' + str-slice('#{$color-green-d}', 2) + '" width="32" height="32"><path d="M29 4H3a3.01 3.01 0 0 0-3 3v20a3.01 3.01 0 0 0 3 3h26a3.01 3.01 0 0 0 3-3V7a3.01 3.01 0 0 0-3-3zM12.461 17.199L4 23.789V8.113l8.461 9.086zM5.512 8h20.976L16 15.875 5.512 8zm7.278 9.553L16 21l3.21-3.447L25.79 26H6.211l6.58-8.447zm6.749-.354L28 8.113v15.676l-8.461-6.59z"/></svg>';
-$icon-arrow: 'data:image/svg+xml;utf8,<svg fill="%23' + str-slice('#{$color-white}', 2) + '" xmlns="http://www.w3.org/2000/svg" width="32" height="32"><path d="M16 1L1 16h9v16h12V16h9z"/></svg>';
+$icon-path: '/wp-content/themes/tourneemauricie/assets/icons/';
+$icon-location: '#{$icon-path}location.svg';
+$icon-phone: '#{$icon-path}mobile.svg';
+$icon-email: '#{$icon-path}envelop.svg';
+$icon-menu: '#{$icon-path}menu.svg';
+$icon-close: '#{$icon-path}cross.svg';
+
+// ILLUSTRATIONS
+$icon-path: '/wp-content/themes/tourneemauricie/assets/illustrations/';

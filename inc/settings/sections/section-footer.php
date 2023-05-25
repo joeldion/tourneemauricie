@@ -12,7 +12,7 @@ add_settings_section(
 
 add_settings_field(
     'tma_footer_logo',
-    esc_html__( 'Logo' ),
+    esc_html__( 'Logo', TMA_DOMAIN ),
     'tma_footer_logo_markup',
     'tma-settings-page',
     'tma-settings-footer-section'
@@ -20,7 +20,7 @@ add_settings_field(
 
 add_settings_field(
     'tma_footer_copyright_text',
-    esc_html__( 'Copyright' ),
+    esc_html__( 'Copyright Text', TMA_DOMAIN ),
     'tma_footer_copyright_text_markup',
     'tma-settings-page',
     'tma-settings-footer-section'
@@ -37,6 +37,6 @@ function tma_footer_logo_markup() {
 
 function tma_footer_copyright_text_markup() {
     ?>
-    <input type="text" name="tma_footer_copyright_text" id="tma-footer-copyright-text" size="40" value="<?php echo get_option( 'tma_footer_copyright_text' ); ?>">
+    <input type="text" name="tma_footer_copyright_text" id="tma-footer-copyright-text" size="50" maxlength="50" value="<?php echo get_option( 'tma_footer_copyright_text' ); ?>">
     <?php
 }

@@ -35,3 +35,8 @@ function tma_participant_type_taxonomy() {
 
 }
 add_action( 'init', 'tma_participant_type_taxonomy' );
+
+/*
+ * Map Icon Media Uploader
+ */
+//

@@ -38,7 +38,7 @@ function tma_participant_contact_callback() {
                     </label>
                 </th>
                 <td>
-                    <input type="tel" size="50" id="tma-phone" name="tma-phone" value="<?php echo $phone; ?>">
+                    <input type="tel" id="tma-phone" name="tma-phone" value="<?php echo $phone; ?>" size="50" maxlength="20">
                 </td>
             </tr>
             <tr valign="top">
@@ -48,7 +48,7 @@ function tma_participant_contact_callback() {
                     </label>
                 </th>
                 <td>
-                    <input type="email" size="50" id="tma-email" name="tma-email" value="<?php echo $email; ?>">
+                    <input type="email" id="tma-email" name="tma-email" value="<?php echo $email; ?>" size="50" maxlength="100">
                 </td>
             </tr>
             <tr valign="top">
@@ -58,7 +58,7 @@ function tma_participant_contact_callback() {
                     </label>
                 </th>
                 <td>
-                    <input type="url" id="tma-website" name="tma-website" value="<?php echo $website; ?>">
+                    <input type="url" id="tma-website" name="tma-website" value="<?php echo $website; ?>" size="50" maxlength="300">
                 </td>
             </tr>
         </tbody>

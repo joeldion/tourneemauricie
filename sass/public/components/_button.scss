@@ -1,0 +1,10 @@
+@use '../abstracts' as *;
+
+.tma-btn {
+    max-width: max-content;
+    display: grid;    
+    align-items: center;
+    justify-content: center;
+    padding: 0 3rem;
+    @include button();
+}

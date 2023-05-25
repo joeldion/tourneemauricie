@@ -28,9 +28,7 @@ function tma_participant_location_callback() {
     $address        = esc_html( get_post_meta( $id, '_tma_address', true ) );
     $postal_code    = esc_html( get_post_meta( $id, '_tma_postal_code', true ) );
     $gmap_url       = esc_url( get_post_meta( $id, '_tma_gmap_url', true ) );
-    $coord          = esc_html( get_post_meta( $id, '_tma_coord', true ) );
-    // $lat            = intval( explode( ',', $coord )[0] );
-    // $lng            = intval( explode( ',', $coord )[1] );
+    $coord          = esc_html( get_post_meta( $id, '_tma_coord', true ) );  
     ?>
     <table class="form-table tma-form">
         <tbody>
@@ -51,7 +49,7 @@ function tma_participant_location_callback() {
                     </label>
                 </th>
                 <td>
-                    <?php tma_get_participant_city_selector($id); ?>
+                    <?php tma_get_participant_city_selector( $id ); ?>
                 </td>
             </tr>
             <tr valign="top">
@@ -72,11 +70,15 @@ function tma_participant_location_callback() {
                 </th>
                 <td>
                     <input type="url" size="50" id="tma-gmap-url" name="tma-gmap-url" value="<?php echo $gmap_url; ?>">
+                    <input type="hidden" id="tma-coord" name="tma-coord" value="<?php echo $coord; ?>">
+                    <?php if ( !empty( $gmap_url ) ): ?>
+                        <a href="<?php echo $gmap_url; ?>" target="_blank"><span class="dashicons dashicons-external"></span></a>
+                    <?php endif; ?>                    
+                    <p><?php echo $coord; ?></p>
                 </td>
-            </tr>        
+            </tr>
         </tbody>
     </table>
-    <input type="hidden" id="tma-coord" name="tma-coord" value="<?php echo $coord; ?>">
     <?php
 
 }
@@ -97,17 +99,21 @@ function tma_participant_location_meta_box_save( $post_id ) {
         return $post_id;
     }
 
-    $data_region = sanitize_textarea_field( $_POST[ 'tma-region' ] );
-    $data_address = sanitize_text_field( $_POST[ 'tma-address' ] );
-    $data_city = intval( $_POST[ 'tma-city' ] );
-    $data_postal_code = sanitize_text_field( $_POST[ 'tma-postal-code' ] );
-    $data_gmap_url = sanitize_text_field( $_POST[ 'tma-gmap-url' ] );    
-    $data_coord = sanitize_text_field( $_POST[ 'tma-coord' ] );
-    update_post_meta( $post_id, '_tma_region', $data_region );
-    update_post_meta( $post_id, '_tma_address', $data_address );
-    wp_set_object_terms( $post_id, $data_city, 'tma_participant_city' );
-    update_post_meta( $post_id, '_tma_postal_code', $data_postal_code );
-    update_post_meta( $post_id, '_tma_gmap_url', $data_gmap_url );
-    update_post_meta( $post_id, '_tma_coord', $data_coord );
+    $address = sanitize_text_field( $_POST[ 'tma-address' ] );
+    $city = intval( $_POST[ 'tma-city' ] );
+    $postal_code = sanitize_text_field( $_POST[ 'tma-postal-code' ] );
+    $gmap_url = sanitize_text_field( $_POST[ 'tma-gmap-url' ] );
+    if ( empty( $gmap_url ) ) {
+        $gmap_url = tma_create_google_maps_url( $address, $city, $postal_code );
+    }
+    $coord = sanitize_text_field( $_POST[ 'tma-coord' ] );
+    update_post_meta( $post_id, '_tma_address', $address );
+    wp_set_object_terms( $post_id, $city, 'tma_participant_city' );
+    update_post_meta( $post_id, '_tma_postal_code', $postal_code );
+    update_post_meta( $post_id, '_tma_gmap_url', $gmap_url );
+    update_post_meta( $post_id, '_tma_coord', $coord );
+
+    // Add data to JSON files for Google Map
+    tma_save_participant_data_as_json();
 
 }

@@ -2,7 +2,7 @@
 /*
  * Participant Meta Boxes
  */
-$meta_boxes = [ 'info', 'location', 'contact' ];
-array_walk($meta_boxes, function($meta_box) {
-    require_once( __DIR__ . '/' . $meta_box . '.php' );
+$files = [ 'info', 'location', 'contact', 'page-region' ];
+array_walk( $files, function( $file ) {
+    require_once( __DIR__ . '/' . $file . '.php' );
 });

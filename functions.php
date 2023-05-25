@@ -1,23 +1,32 @@
 <?php
-setlocale(LC_ALL, 'fr_CA');
+setlocale(LC_ALL, 'fr_CA' );
 
 /*
  * Constants
  */
-defined('TMA_BASE') or define('TMA_BASE', __DIR__ . '/');
-defined('TMA_URL') or define('TMA_URL', get_template_directory_uri() . '/');
-defined('TMA_INC') or define('TMA_INC', TMA_BASE . 'inc/');
-defined('TMA_VER') or define('TMA_VER', '0.0.1');
-defined('TMA_DOMAIN') or define('TMA_DOMAIN', 'tourneemauricie');
-defined('TMA_GLOBALS') or define('TMA_GLOBALS', [
-    'baseURL'   =>  get_site_url(),
-    'wpAjaxURL' =>  admin_url('admin-ajax.php'),
-    'nonce'     =>  wp_create_nonce('TMA_nonce'),
+defined( 'TMA_BASE' ) or define( 'TMA_BASE', __DIR__ . '/' );
+defined( 'TMA_URL' ) or define( 'TMA_URL', get_template_directory_uri() . '/' );
+defined( 'TMA_INC' ) or define( 'TMA_INC', TMA_BASE . 'inc/' );
+defined( 'TMA_VER' ) or define( 'TMA_VER', '1.0.0' );
+defined( 'TMA_DOMAIN' ) or define( 'TMA_DOMAIN', 'tourneemauricie' );
+defined( 'TMA_RECAPTCHA_KEY' ) or define( 'TMA_RECAPTCHA_KEY', '6LfUVhQmAAAAALQpyTsHcvvdOpmmRCeepRVE09uI' );
+defined( 'TMA_GLOBALS' ) or define( 'TMA_GLOBALS', [
+    'baseURL'           =>  get_site_url(),
+    'wpAjaxURL'         =>  admin_url( 'admin-ajax.php' ),
+    'nonce'             =>  wp_create_nonce( 'TMA_nonce' ),
+    'assetsPath'        => TMA_URL . 'assets/',
+    'mapDataFilePath'   => TMA_URL . 'inc/google-map/data/',
+    'mapDataTypesFile'  => TMA_URL . 'inc/google-map/data/map-data-types.json',
+    'reCaptchaKey'      => TMA_RECAPTCHA_KEY,
 ]);
-defined('TMA_LOCALS') or define('TMA_LOCALS', [
-    'select_file'   =>  esc_html__('Select file'),
-    'confirm'       =>  esc_html__('Select')
+defined(' TMA_LOCALS' ) or define( 'TMA_LOCALS', [
+    'select_file'   =>  esc_html__( 'Select file' ),
+    'confirm'       =>  esc_html__( 'Select' ),
+    'email_label'   =>  esc_html__( 'Email' ),
+    'more_info'     =>  esc_html__( 'More info', TMA_DOMAIN )
 ]);
+
+defined( 'TMA_GMAP_API_KEY' ) or define( 'TMA_GMAP_API_KEY', 'AIzaSyBZ1j5bpAFVJ4F2h4A7Qu4zpVOHmii-itA' );
 
 /*
  * Theme Support
@@ -37,43 +46,33 @@ $includes = [
     'cpt/partners/init',
     'detect-mobile',
     'enqueue',
+    'google-map/init',
     'helper-functions',
     'image-sizes',
-    'login',    
+    'login',
+    'menus',
     'settings/init',
     'svg-support'
 ];
-foreach ($includes as $inc) {
-    require_once(TMA_INC . $inc . '.php');
+foreach ( $includes as $inc ) {
+    require_once( TMA_INC . $inc . '.php' );
 }
 
 /*
  * Add category support to pages
  */
 function tma_add_categories_to_pages() {
-    register_taxonomy_for_object_type('category', 'page');
+    register_taxonomy_for_object_type( 'category', 'page' );
 }
-add_action('init', 'tma_add_categories_to_pages');
+add_action( 'init', 'tma_add_categories_to_pages' );
 
 /*
- * Nav Menus
+ * Private site except for sign up (temp)
  */
-register_nav_menus(['main-menu' =>  esc_html__('Main')]);
-
-/*
- * BEM menu items
- */
-function tma_bem_nav_menu_css_class($classes) {
-
-    // Reset all default classes and start adding custom classes to array.
-    $_classes = ['menu__item'];
-
-    // Add 'has-children' class if menu element contains sub-menu
-    if (in_array('menu-item-has-children', $classes)) {
-        array_push($_classes, 'has-children');
-    }
-
-    return $_classes;
-
-}
-add_filter('nav_menu_css_class', 'tma_bem_nav_menu_css_class', 10, 4);
+// function redirect_non_logged_in_users() {
+//     if ( !is_user_logged_in() && !is_page('inscription') ) {
+//             wp_redirect(home_url('/inscription/'));
+//         exit();
+//     }
+// }
+// add_action('template_redirect', 'redirect_non_logged_in_users');

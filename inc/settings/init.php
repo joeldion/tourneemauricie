@@ -9,12 +9,12 @@ add_action( 'admin_init', 'tma_settings_init' );
 function tma_settings_admin_menu() {
 
     add_menu_page(
-        esc_html__( 'Edit Content', TMA_DOMAIN ),
-        esc_html__( 'Edit Content', TMA_DOMAIN ),
+        esc_html__( 'Parameters', TMA_DOMAIN ),
+        esc_html__( 'Parameters', TMA_DOMAIN ),
         'manage_options',
         'tma-settings-page',
         'tma_settings',
-        'dashicons-edit',
+        'dashicons-admin-generic',
         4
     );
 

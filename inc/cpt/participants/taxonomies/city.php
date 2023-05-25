@@ -35,3 +35,60 @@ function tma_participant_city_taxonomy() {
 
 }
 add_action( 'init', 'tma_participant_city_taxonomy' );
+
+/*
+ * Region selector
+ */
+// New taxonomy form
+function tma_region_selector_add_form_markup( $term, $taxonomy = 'tma_participant_region' ) {
+
+    $saved_region = get_term_meta( $term->term_id, '_tma_region', true );
+    ?>
+    <div class="form-field">
+        <label for="tma-region">
+            <?php echo esc_html( _nx( 'Region', 'Regions', 1, 'Region name', TMA_DOMAIN ) ); ?>
+        </label>
+        <?php tma_get_participant_region_selector( $saved_region ); ?>
+    </div>
+    <br>
+    <?php
+
+}
+add_action( 'tma_participant_city_add_form_fields', 'tma_region_selector_add_form_markup', 10, 2 ); 
+
+// Edit taxonomy form
+function tma_region_selector_edit_form_markup( $term, $taxonomy = 'tma_participant_region' ) {
+
+    $saved_region = get_term_meta( $term->term_id, '_tma_region', true );
+    ?>
+    <tr class="form-field">
+        <th>
+            <label for="tma-region">
+                <?php echo esc_html( _nx( 'Region', 'Regions', 1, 'Region name', TMA_DOMAIN ) ); ?>
+            </label>
+        </th>
+        <td>
+            <?php tma_get_participant_region_selector( $saved_region ); ?>
+        </td>
+    </tr>
+    <?php
+
+}
+add_action( 'tma_participant_city_edit_form_fields', 'tma_region_selector_edit_form_markup', 10, 2 );
+
+/*
+ * Save city region taxonomy
+ */
+function tma_region_taxonomy_save( $term, $taxonomy = 'tma_participant_region' ) {
+
+    $city = get_term($term);
+    $region_data = intval( $_POST['tma-region'] );
+    if ( isset($region_data) ) {
+        update_term_meta( $city->term_id, '_tma_region', $region_data );
+    }
+
+}
+// New taxonomy form
+add_action( 'created_tma_participant_city', 'tma_region_taxonomy_save', 10, 2 );
+// Edit taxonomy form
+add_action( 'edited_tma_participant_city', 'tma_region_taxonomy_save', 10, 2 );

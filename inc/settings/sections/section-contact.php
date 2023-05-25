@@ -20,7 +20,7 @@ add_settings_field(
 
 add_settings_field(
     'tma_contact_phone',
-    esc_html__( 'Phone' ),
+    esc_html__( 'Phone', TMA_DOMAIN ),
     'tma_contact_phone_markup',
     'tma-settings-page',
     'tma-settings-contact-section'
@@ -42,18 +42,18 @@ function tma_contact_settings_section_callback() {}
 
 function tma_contact_title_markup() {
     ?>
-    <input type="text" name="tma_contact_title" id="tma-contact-title" size="40" maxlength="30" value="<?php echo get_option( 'tma_contact_title' ); ?>">
+    <input type="text" name="tma_contact_title" id="tma-contact-title" size="30" maxlength="30" value="<?php echo get_option( 'tma_contact_title' ); ?>">
     <?php
 }
 
 function tma_contact_phone_markup() {
     ?>
-    <input type="tel" name="tma_contact_phone" id="tma-contact-phone" size="40" value="<?php echo get_option( 'tma_contact_phone' ); ?>">
+    <input type="tel" name="tma_contact_phone" id="tma-contact-phone" size="30" maxlength="30" value="<?php echo get_option( 'tma_contact_phone' ); ?>">
     <?php
 }
 
 function tma_contact_email_markup() {
     ?>
-    <input type="email" name="tma_contact_email" id="tma-contact-email" size="40" value="<?php echo get_option( 'tma_contact_email' ); ?>">
+    <input type="email" name="tma_contact_email" id="tma-contact-email" size="40" maxlength="40" value="<?php echo get_option( 'tma_contact_email' ); ?>">
     <?php
 }

@@ -13,13 +13,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: fr_CA\n"
 
-########################
-# Settings: Edit content
-########################
-msgid "Edit Content"
+######################
+# Settings: Parameters
+######################
+msgid "Parameters"
 msgstr ""
 
 msgid "Introduction"
+msgstr ""
+
+msgid "Button Text"
+msgstr ""
+
+msgid "Button Link"
 msgstr ""
 
 msgid "Contact Info"
@@ -31,30 +37,15 @@ msgstr ""
 msgid "Introduction Text"
 msgstr ""
 
-msgid "Location"
-msgstr ""
-
-msgid "Civic Address"
-msgstr ""
-
-msgid "City / Town"
-msgstr ""
-
-msgid "Postal Code"
-msgstr ""
-
-msgid "Google Maps URL"
-msgstr ""
-
-msgid "Map"
-msgstr ""
-
 msgid "Participants Sections"
 msgstr ""
 
-###################
-# CPT: Participants
-###################
+msgid "Default Image"
+msgstr ""
+
+##################
+# CPT: Participant
+##################
 msgctxt "Participant name"
 msgid "Participant"
 msgid_plural "Participants"
@@ -94,9 +85,36 @@ msgstr ""
 msgid "Long description"
 msgstr ""
 
-###############
-# CPT: Partners
-###############
+msgid "Name of the person responsible"
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "Civic Address"
+msgstr ""
+
+msgid "City / Town"
+msgstr ""
+
+msgid "Postal Code"
+msgstr ""
+
+msgid "Google Maps URL"
+msgstr ""
+
+msgid "Map"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "More info"
+msgstr ""
+
+##############
+# CPT: Partner
+##############
 msgctxt "Partner name"
 msgid "Partner"
 msgid_plural "Partners"
@@ -224,4 +242,13 @@ msgid "No Participant Types found"
 msgstr ""
 
 msgid "No Participant Types found in trash"
+msgstr ""
+
+########
+# Footer
+########
+msgid "Logo"
+msgstr ""
+
+msgid "Copyright Text"
 msgstr ""

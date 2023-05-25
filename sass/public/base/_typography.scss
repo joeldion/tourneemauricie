@@ -8,28 +8,38 @@ h5,
 h6 {
     font-family: $font-secondary;
     font-weight: 700;
-    padding-bottom: 4rem;
+    // padding-bottom: 4rem;
 }
 
+h1 { font-size: 5rem; }
 h2 { font-size: 4rem; }
 h3 { font-size: 3.6rem; }
 h4 { font-size: 3rem; }
 h5 { font-size: 2.4rem; }
 h6 { font-size: 2rem; }
-h5, h6 { font-weight: 400; }
 
+@include respond(screen_767) {
+    h1 { font-size: 3.6rem; }
+    h2 { font-size: 3rem; }
+    h3 { font-size: 2.8rem; }
+    h4 { font-size: 2.4rem; }
+    h5 { font-size: 1.8rem; }
+    h6 { font-size: 1.6rem; }
+}
+
+h5, h6 { font-weight: 400; }
 
 div,
 p,
 li {
+    color: $color-gray-d;
     font-size: 1.8rem;
     font-weight: 400;
     font-family: $font-primary;
 }
 
 p, 
-li,
-span {
+li {
     padding-bottom: 2.4rem;
 }
 
@@ -41,8 +51,9 @@ a:hover {
 }
 
 a {
-    color: $color-green-d;
-    transition: all .2s ease;
+    color: $color-red-d;
+    transition: all .4s ease;
+    cursor: pointer;
 
     @media print {
         color: $color-gray-d;

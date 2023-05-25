@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+
+.tma-form {
+
+    &__error {
+        color: $color-red-d;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        opacity: 0;
+        transition: all .6s;
+
+        &.visible {
+            opacity: 1;
+        }
+
+    }
+
+    &__field {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    label {
+        color: $color-meadow-d;
+        font-size: 1.8rem;
+    }
+
+    input,
+    textarea {
+        padding: 1rem;
+        font-size: 1.6rem;
+        font-weight: 400;
+        font-family: $font-primary;
+        border: 1px solid $color-gray-l;
+    }
+
+    input {
+        max-width: 40rem;
+    }
+
+    textarea {
+        min-height: 15rem;
+    }
+
+}

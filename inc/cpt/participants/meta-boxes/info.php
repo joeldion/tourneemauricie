@@ -24,9 +24,9 @@ function tma_participant_info_callback() {
     wp_nonce_field( 'tma_participant_info', 'tma_participant_info_nonce' );
 
     global $post;
-    $id             = $post->ID;
-    $short_desc     = esc_html( get_post_meta( $id, '_tma_short_desc', true ) );
-    $long_desc      = esc_html( get_post_meta( $id, '_tma_long_desc', true ) );
+    $short_desc = esc_html( get_post_meta( $post->ID, '_tma_short_desc', true ) );
+    $long_desc  = esc_html( get_post_meta( $post->ID, '_tma_long_desc', true ) );
+    $person     = esc_html( get_post_meta( $post->ID, '_tma_person', true ) );
     ?>
     <table class="form-table tma-form">
         <tbody>
@@ -37,7 +37,7 @@ function tma_participant_info_callback() {
                     </label>
                 </th>             
                 <td>
-                    <?php tma_get_participant_type_selector($id); ?>
+                    <?php tma_get_participant_type_selector( $post->ID ); ?>
                 </td>
             </tr>
             <tr valign="top">
@@ -57,7 +57,17 @@ function tma_participant_info_callback() {
                     </label>
                 </th>
                 <td>                    
-                    <textarea id="tma-long-desc" cols="80" rows="10"  name="tma-long-desc" rows="5"><?php echo $long_desc; ?></textarea>
+                    <textarea id="tma-long-desc" name="tma-long-desc" cols="80" rows="10"><?php echo $long_desc; ?></textarea>
+                </td>
+            </tr>
+            <tr valign="top">
+                <th>
+                    <label for="tma-person">
+                        <span class="option-title"><?php esc_html_e( 'Name of the person responsible', TMA_DOMAIN ); ?></span>
+                    </label>
+                </th>
+                <td>                    
+                    <input type="text" id="tma-person" name="tma-person" size="40" maxlength="40" value="<?php echo $person; ?>">
                 </td>
             </tr>
         </tbody>
@@ -85,8 +95,10 @@ function tma_participant_info_meta_box_save( $post_id ) {
     $data_type = intval( $_POST['tma-type'] );
     $data_short_desc = sanitize_text_field( $_POST['tma-short-desc'] );
     $data_long_desc = sanitize_textarea_field( $_POST['tma-long-desc'] );
+    $data_person = sanitize_text_field( $_POST['tma-person'] );
     wp_set_object_terms( $post_id, $data_type, 'tma_participant_type' );
     update_post_meta( $post_id, '_tma_short_desc', $data_short_desc );
     update_post_meta( $post_id, '_tma_long_desc', $data_long_desc );
+    update_post_meta( $post_id, '_tma_person', $data_person );
 
 }

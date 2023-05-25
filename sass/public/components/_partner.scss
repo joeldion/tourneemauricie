@@ -1,9 +1,20 @@
 @use '../abstracts' as *;
 
 .partners {
+    display: grid;
     grid-template-columns: repeat(3, 20rem);
+    gap: 5rem;
     max-width: 80rem;
     margin: 0 auto;
+
+    @include respond(screen_900) {
+        grid-template-columns: repeat(2, 20rem);
+    }
+
+    @include respond(screen_500) {
+        grid-template-columns: 20rem;
+    }
+
 }
 
 .partner {

@@ -1,47 +1,57 @@
-<?php 
-/*
- * Header
- */
-?>
-<header class="header" role="banner" style="background-image: url(<?php echo TMA_URL . 'assets/img/banner-demo.jpg'; ?>);">
-
-    <div class="header__content">
-
-        <h1 class="header__logo">                
-            <a href="<?php echo get_home_url(); ?>" aria-label="Accueil">
-                <img src="<?php echo tma_logo_src(); ?>" alt="<?php echo get_bloginfo( 'title' ); ?>" title="<?php echo get_bloginfo( 'title' ); ?>" height="192" width="300">
-            </a>                              
-        </h1>
-        
-        <h2 class="header__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, veniam quaerat!</h2>
-
-        <h3 class="header__dates">23 et 24 septembre 2023</h3>
-
-        <nav class="header__menu menu" role="navigation">
-            <ul class="menu__list">
-                <li class="menu__item"><a href="#" data-target="#listing-1" >Tournée des Chenaux</a></li>
-                <li class="menu__item"><a href="#" data-target="#listing-2">Tournée Maski</a></li>
-                <li class="menu__item"><a href="#" data-target="#listing-3">Tournée Mékinac</a></li>
-            </ul>
-        </nav>
-
-        
-
-        <!-- <div class="header__cta">
-            <a href="#" class="scroll" data-target="#map">Voir l'itinéraire</a>
-        </div> -->
-
-        <?php /*
-        <div class="header__video<?php echo is_mobile() ? ' header__video--mobile' : ''; ?>">
-            <?php if ( !is_mobile() ): ?>
-                <video muted loop preload="none" poster="<?php echo HP_URL; ?>/img/videos/hangarts-intro-frame.jpg">
-                    <source src="<?php echo HP_URL; ?>/img/videos/hangarts-intro.mp4" type="video/mp4" />
-                    Votre navigateur est désuet.
-                </video>
-            <?php endif; ?>
-        </div>
-        */ ?>
-
-    </div>
-
-</header>
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <Favicon> -->
+        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo TMA_URL; ?>/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="<?php echo TMA_URL; ?>/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?php echo TMA_URL; ?>/favicon/favicon-16x16.png">
+        <link rel="manifest" href="<?php echo TMA_URL; ?>/favicon/site.webmanifest">
+        <link rel="mask-icon" href="<?php echo TMA_URL; ?>/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <!-- </Favicon> -->
+        <!-- <Fonts> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Ruda:wght@900&display=swap" rel="stylesheet">
+        <!-- </Fonts> -->
+        <title><?php echo get_bloginfo( 'title' ); ?></title>
+        <?php wp_head(); ?>
+    </head>
+    <body <?php body_class('container'); ?>>
+        <?php
+            wp_nav_menu([
+                'theme_location'    =>  'top-menu',
+                'container'         =>  'nav',
+                'container_class'   =>  'top-menu',
+                'container_id'      =>  'top-menu',
+                'menu_id'           =>  'top-menu-list',
+                'menu_class'        =>  'top-menu__list',
+                'items_wrap'        =>  '<a href="#" id="top-menu-hamburger" class="top-menu__hamburger"></a><ul id="%1$s" class="%2$s">%3$s</ul>'
+            ]);
+        ?>
+        <header class="header" role="banner">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="<?php echo get_home_url(); ?>" aria-label="Accueil">
+                        <img src="<?php echo tma_logo_src(); ?>" alt="<?php echo get_bloginfo( 'title' ); ?>" title="<?php echo get_bloginfo( 'title' ); ?>" height="192" width="300">
+                    </a>                              
+                </div>
+                <?php
+                /*
+                    $args = [
+                        'theme_location'    =>  'main-menu',
+                        'container'         =>  'nav',
+                        'container_class'   =>  'header__menu menu',
+                        'menu_id'           =>  'main-menu',
+                        'menu_class'        =>  'menu__list'
+                    ];
+                    wp_nav_menu( $args );
+                */
+                ?>
+                <h1 class="header__title"><?php the_title(); ?></h1>                
+            </div>
+        </header>

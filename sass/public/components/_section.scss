@@ -1,16 +1,41 @@
 @use '../abstracts' as *;
 
 .section {
+    grid-column: content-start / content-end;
     display: grid;
     grid-template-columns: 1fr;
     gap: 5rem;
+    max-width: 140rem;
+    margin: 0 auto;
+
+    &--map {
+        // grid-column: margin-left-start / margin-right-end;
+        max-width: 100%;
+        margin: 0;
+        gap: 3rem;
+    }
 
     &__head {
         grid-column: 1 / -1;
-        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4rem;
 
         &-title {
             text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 1rem;
+
+            @include respond(screen_500) {
+                font-size: 3rem;
+                letter-spacing: .5rem;
+            }
+
+        }
+
+        &-text {
+            max-width: 80rem;
+            margin: 0 auto;
         }
 
     }
@@ -18,12 +43,18 @@
     &__columns {
         display: grid;
         grid-template-columns: repeat(2, minmax(20rem, 60rem));
-        gap: 5rem;
+        gap: 12rem 5rem;
 
         @include respond(screen_900) {
             grid-template-columns: 1fr;
         }
 
+    }
+
+    &__image {
+        > img {
+            border-radius: 4rem 0;
+        }        
     }
 
 }

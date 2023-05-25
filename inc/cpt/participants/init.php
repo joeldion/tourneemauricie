@@ -35,9 +35,9 @@ add_action( 'init', 'tma_participant_cpt', 9 );
  * Includes
  */
 $includes = [
-    'classes',
-    'columns',
-    'functions',
+    'classes/index',
+    'columns/index',
+    'functions/index',
     'meta-boxes/index',
     'taxonomies/index'
 ];

@@ -1,0 +1,81 @@
+@use '../abstracts' as *;
+
+.participant {
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+    gap: 5rem;
+
+    &__image {
+        max-width: 60rem;
+        max-height: 40rem;
+        border-radius: 4rem 0;
+    }
+
+    &__details {
+        display: grid;
+        gap: 2rem;
+
+        // p {
+        //     padding-bottom: 0;
+        // }
+
+    }
+
+    &__title {
+        color: $color-red-d;
+        // color: $color-maroon;
+        padding-bottom: 0;
+    }
+
+    &__short-desc {        
+        color: $color-meadow-d;
+        font-weight: 500;
+        padding-bottom: 0;    
+    }
+
+    &__contact {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.6rem;
+        width: fit-content;
+
+        &:hover {            
+            filter: grayscale(1);
+        }
+
+        &::before {
+            content: '';
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+
+        &--address {
+            &::before {
+                background-image: url($icon-location);
+            }            
+        }
+
+        &--phone {
+            &::before {
+                background-image: url($icon-phone);
+            }            
+        }
+
+        &--email {
+            &::before {
+                background-image: url($icon-email);
+            }            
+        }
+
+    }
+
+    &__cta {
+        margin-top: 3rem;
+    }
+
+}

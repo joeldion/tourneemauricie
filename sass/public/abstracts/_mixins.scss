@@ -41,3 +41,20 @@
     }
 
 }
+
+@mixin button() {
+    color: $color-white;
+    background-color: $color-red-d;
+    border-radius: 4rem;
+    // box-shadow: 2px 2px 0 $color-gray-d;
+    transition: all .4s ease;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    height: 6rem;
+
+    &:hover {
+        color: $color-white;
+        background-color: $color-green-m;
+    }
+
+}

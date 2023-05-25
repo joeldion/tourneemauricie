@@ -1,0 +1,254 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Tournée Arts et Terroir WordPress Theme\n"
+"POT-Creation-Date: 2023-05-03 08:30-0400\n"
+"PO-Revision-Date: 2023-05-10 15:36-0400\n"
+"Last-Translator: \n"
+"Language-Team: Joël Dion <joel.dion@mrc-maskinonge.qc.ca>\n"
+"Language: fr_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: .\n"
+
+# ####################
+# Settings: Parameters
+# ####################
+msgid "Parameters"
+msgstr "Paramètres"
+
+msgid "Introduction"
+msgstr "Introduction"
+
+msgid "Button Text"
+msgstr "Texte du button"
+
+msgid "Button Link"
+msgstr "Lien du bouton"
+
+msgid "Contact Info"
+msgstr "Coordonnées"
+
+msgid "Section Title"
+msgstr "Titre de la section"
+
+msgid "Introduction Text"
+msgstr "Texte d'introduction"
+
+msgid "Participants Sections"
+msgstr "Sections des participants"
+
+msgid "Default Image"
+msgstr "Image par défaut"
+
+# #################
+# CPT: Participant
+# #################
+msgctxt "Participant name"
+msgid "Participant"
+msgid_plural "Participants"
+msgstr[0] "Participant"
+msgstr[1] "Participants"
+
+msgid "Add Participant"
+msgstr "Ajouter un participant"
+
+msgid "Edit Participant"
+msgstr "Modifier le participant"
+
+msgid "New Participant"
+msgstr "Nouveau participant"
+
+msgid "All Participants"
+msgstr "Tous les participants"
+
+msgid "View Participant"
+msgstr "Voir le participant"
+
+msgid "Search Participants"
+msgstr "Rechercher parmi les participants"
+
+msgid "No Participants found"
+msgstr "Aucun participant trouvé"
+
+msgid "No Participants found in trash"
+msgstr "Aucun participant trouvé dans la corbeille"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Short description"
+msgstr "Description courte"
+
+msgid "Long description"
+msgstr "Description longue"
+
+msgid "Name of the person responsible"
+msgstr "Nom de la personne responsable"
+
+msgid "Location"
+msgstr "Lieu"
+
+msgid "Civic Address"
+msgstr "Adresse civique"
+
+msgid "City / Town"
+msgstr "Ville / municipalité"
+
+msgid "Postal Code"
+msgstr "Code postal"
+
+msgid "Google Maps URL"
+msgstr "URL Google Maps"
+
+msgid "Map"
+msgstr "Carte"
+
+msgid "Phone"
+msgstr "Téléphone"
+
+msgid "More info"
+msgstr "En savoir plus"
+
+# #############
+# CPT: Partner
+# #############
+msgctxt "Partner name"
+msgid "Partner"
+msgid_plural "Partners"
+msgstr[0] "Partenaire"
+msgstr[1] "Partenaires"
+
+msgid "Add Partner"
+msgstr "Ajouter un partenaire"
+
+msgid "Edit Partner"
+msgstr "Modifier le partenaire"
+
+msgid "New Partner"
+msgstr "Nouveau partenaire"
+
+msgid "All Partners"
+msgstr "Tous les partenaires"
+
+msgid "View Partner"
+msgstr "Voir le partenaire"
+
+msgid "Search Partners"
+msgstr "Rechercher parmi les partenaires"
+
+msgid "No Partners found"
+msgstr "Aucun partenaire trouvé"
+
+msgid "No Partners found in trash"
+msgstr "Aucun partenaire trouvé dans la corbeille"
+
+# ###############
+# Taxonomy: City
+# ###############
+msgctxt "City name"
+msgid "City"
+msgid_plural "Cities"
+msgstr[0] "Ville"
+msgstr[1] "Villes"
+
+msgid "Add City"
+msgstr "Ajouter une ville"
+
+msgid "Edit City"
+msgstr "Modifier la ville"
+
+msgid "New City"
+msgstr "Nouvelle ville"
+
+msgid "All Cities"
+msgstr "Toutes les villes"
+
+msgid "View City"
+msgstr "Voir la ville"
+
+msgid "Search Cities"
+msgstr "Rechercher parmi les villes"
+
+msgid "No Cities found"
+msgstr "Aucune ville trouvée"
+
+msgid "No Cities found in trash"
+msgstr "Aucune ville trouvée dans la corbeille"
+
+# #################
+# Taxonomy: Region
+# #################
+msgctxt "Region name"
+msgid "Region"
+msgid_plural "Regions"
+msgstr[0] "Région"
+msgstr[1] "Régions"
+
+msgid "Add Region"
+msgstr "Ajouter une région"
+
+msgid "Edit Region"
+msgstr "Modifier la région"
+
+msgid "New Region"
+msgstr "Nouvelle région"
+
+msgid "All Regions"
+msgstr "Toutes les régions"
+
+msgid "View Region"
+msgstr "Voir la région"
+
+msgid "Search Regions"
+msgstr "Rechercher parmi les régions"
+
+msgid "No Regions found"
+msgstr "Aucune région trouvée"
+
+msgid "No Regions found in trash"
+msgstr "Aucune région trouvée dans la corbeille"
+
+# ###########################
+# Taxonomy: Participant Type
+# ###########################
+msgctxt "Participant Type name"
+msgid "Participant Type"
+msgid_plural "Participant Types"
+msgstr[0] "Type de participant"
+msgstr[1] "Types de participant"
+
+msgid "Add Participant Type"
+msgstr "Ajouter un type de participant"
+
+msgid "Edit Participant Type"
+msgstr "Modifier le type de participant"
+
+msgid "New Participant Type"
+msgstr "Nouveau type de participant"
+
+msgid "All Participant Types"
+msgstr "Tous les types de participant"
+
+msgid "View Participant Type"
+msgstr "Voir le type de participant"
+
+msgid "Search Participant Types"
+msgstr "Rechercher parmi les types de participant"
+
+msgid "No Participant Types found"
+msgstr "Aucune type de participant trouvé"
+
+msgid "No Participant Types found in trash"
+msgstr "Aucune type de participant trouvé dans la corbeille"
+
+# #######
+# Footer
+# #######
+msgid "Logo"
+msgstr "Logo"
+
+msgid "Copyright Text"
+msgstr "Texte de droits d'auteur"

@@ -1,5 +1,23 @@
 'use strict';
 
+/*
+ * Mobile menu
+ */
+const hamburger = document.getElementById('top-menu-hamburger');
+const toggleMobileMenu = () => {
+    hamburger.classList.toggle('collapsed');
+    document.querySelectorAll('#top-menu, #top-menu-list').forEach(el => {
+        el.classList.toggle('collapsed');
+    });
+};
+hamburger.addEventListener('click', function(e) {
+    e.preventDefault();
+    toggleMobileMenu();
+});
+
+/* 
+ * Scroll to element
+ */
 const scrollToElement = (element, offset = 100) => {
 
     // Get the distance from the top of the page to the element
@@ -18,13 +36,26 @@ const scrollToElement = (element, offset = 100) => {
 
 };
 
-/*
- * Scroll to section when clicking menu link
+/* 
+ * Scroll to anchor element
  */
-const menuLinks = document.querySelectorAll('.menu__item > a');
-menuLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+document.querySelectorAll('.anchor').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        scrollToElement(document.querySelector(e.target.dataset.target));
+        scrollToElement(document.querySelector(e.target.dataset.anchor));
+        // Close mobile menu
+        if (e.target.closest('.top-menu__item')) {
+            toggleMobileMenu();
+        }
     });
 });
+
+// ReCaptcha
+// let reCaptchaToken = document.getElementById('recaptcha-token');
+// if (reCaptchaToken) {
+//     grecaptcha.ready(function() {
+//         grecaptcha.execute( globals.reCaptchaKey, { action: 'homepage' } ).then( function(token) {
+//             token_input.value = token;
+//         });
+//     });
+// }
