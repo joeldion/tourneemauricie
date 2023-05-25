@@ -4,15 +4,27 @@
  */
 ?>
 <section id="intro" class="section section--intro">
-    <div class="section__columns">
-        <div class="section__text">
+    <div class="section__head">
+        <div class="section__head-text">
             <?php echo wpautop( get_option( 'tma_intro_text' ) ); ?>
-            <a class="intro__btn tma-btn" href="<?php echo esc_url( get_option('tma_intro_btn_link') ); ?>">
-                <?php esc_html_e( get_option('tma_intro_btn_text') ); ?>
-            </a>
-        </div>
-        <div class="section__image">
-            <img src="<?php echo wp_get_attachment_image_url( get_option( 'tma_intro_image' ), 'tma' ); ?>" srcset="<?php echo tma_srcset( get_option( 'tma_intro_image' ) ); ?>" alt="<?php echo bloginfo( 'title' ); ?>" width="700" height="440" loading="lazy">
+            <ul class="tma-list">
+                <li class="tma-list__item tma-list__item--garlic">                            
+                    Visiter installations, animaux et cultures, faires des dégustations et mettre la main sur des produits frais
+                </li>
+                <li class="tma-list__item tma-list__item--pencil-brush">
+                    Découvrir des talents et des technique, se procurer des œuvres originales créées chez nous et faire de belles rencontres en famille
+                </li>
+            </ul>
         </div>
     </div>
+    <?php
+        wp_nav_menu([
+            'theme_location'    =>  'main-menu',
+            'container'         =>  'nav',
+            'container_class'   =>  'header__menu menu',
+            'container_id'      =>  'main-menu',
+            'menu_id'           =>  'main-menu-list',
+            'menu_class'        =>  'menu__list'
+        ]);
+    ?>
 </section>

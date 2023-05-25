@@ -40,17 +40,21 @@
                         <img src="<?php echo tma_logo_src(); ?>" alt="<?php echo get_bloginfo( 'title' ); ?>" title="<?php echo get_bloginfo( 'title' ); ?>" height="192" width="300">
                     </a>                              
                 </h1>                
-                <h2 class="header__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, veniam quaerat!</h2>
-                <h3 class="header__dates">23 et 24 septembre 2023</h3>                
-                <?php
-                    wp_nav_menu([
-                        'theme_location'    =>  'main-menu',
-                        'container'         =>  'nav',
-                        'container_class'   =>  'header__menu menu',
-                        'container_id'      =>  'main-menu',
-                        'menu_id'           =>  'main-menu-list',
-                        'menu_class'        =>  'menu__list'
-                    ]);
-                ?>
+                <h3 class="header__dates">23 et 24 septembre 2023</h3>
+                <h2 class="header__subtitle">Portes ouvertes chez près de 90 producteurs, artistes et artisans</h2>
+
+                <!-- <div class="header__text">
+                    <p>La Tournée Arts et Terroir Mauricie, un heureux mélange entre route des arts et itinéraire gourmand.</p>
+                    <p>Artistes, artisans et producteurs de la Mauricie rurale vous ouvrent leurs portes pour présenter leurs œuvres et leurs produits, et expliquer comment ils travaillent.</p>
+                    <ul class="tma-list">
+                        <li class="tma-list__item tma-list__item--garlic">                            
+                            Visiter installations, animaux et cultures, faires des dégustations et mettre la main sur des produits frais
+                        </li>
+                        <li class="tma-list__item tma-list__item--pencil-brush">
+                            Découvrir des talents et des technique, se procurer des œuvres originales créées chez nous et faire de belles rencontres en famille
+                        </li>
+                    </ul>
+                </div> -->
+                
             </div>
         </header>

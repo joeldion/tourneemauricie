@@ -10,9 +10,9 @@
     background-size: cover;
     padding: 10rem 2rem 0;
 
-    &--front-page {
-        height: 100vh;
-    }
+    // &--front-page {
+    //     height: 100vh;
+    // }
 
     @include respond(screen_900) {
         height: max-content;
@@ -63,40 +63,10 @@
         font-size: 2.6rem;
     }
 
-    &__cta {
-        display: grid;
-        grid-template-columns: max-content;
-        justify-content: center;
-        text-align: center;
-
-        > a {
-            color: $color-white;
-            text-transform: uppercase;
-            padding: 2rem 0;
-            display: grid;
-            justify-content: center;
-            row-gap: 2rem;
-
-            &::after {
-                content: '\232A';
-                font-size: 3.4rem;
-                height: 5px;
-                line-height: 0;
-                transform: rotate(90deg);
-                position: relative;
-                top: 0;
-                transition: all .2s;
-            }
-
-            &:hover {
-
-                &::after {
-                    top: 1rem;
-                }
-
-            }
-
-        }
+    &__text {
+        max-width: 85rem;
+        margin: 0 auto;
+        text-align: left;
     }
 
 }
