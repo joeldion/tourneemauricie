@@ -106,6 +106,9 @@ msgstr ""
 msgid "Coordinates"
 msgstr ""
 
+msgid "Adjust coordinates"
+msgstr ""
+
 msgid "Map"
 msgstr ""
 
