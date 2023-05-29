@@ -103,6 +103,9 @@ msgstr ""
 msgid "Google Maps URL"
 msgstr ""
 
+msgid "Coordinates"
+msgstr ""
+
 msgid "Map"
 msgstr ""
 

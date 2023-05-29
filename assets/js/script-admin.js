@@ -82,15 +82,18 @@ const updateParticipantCoordinates = () => {
             'address': tmaFullAddress
         };
         geocoder.geocode(geocoderRequest, function(results) {
-            // Update coordinitates field witl lat/lng values
+            // Update coordinates field witl lat/lng values
             const location = results[0].geometry.location;
-            const coord = location.lat() + ',' + location.lng();          
+            let coord = location.lat() + ',' + location.lng();
             tmaCoord.value = coord;            
         });
-        
+
     }
 
-    getCoord();
+    // Get coordinates from address if "Adjust coordinates" checkbox is checked
+    if (!document.querySelector('#tma-coord-adjust').checked) {
+        getCoord();
+    }
 
     for (let i = 0; i < tmaAddressFields.length; i++) {
         tmaAddressFields[i].addEventListener('change', function(){

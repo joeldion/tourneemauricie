@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tournée Arts et Terroir WordPress Theme\n"
 "POT-Creation-Date: 2023-05-03 08:30-0400\n"
-"PO-Revision-Date: 2023-05-10 15:36-0400\n"
+"PO-Revision-Date: 2023-05-29 09:26-0400\n"
 "Last-Translator: \n"
 "Language-Team: Joël Dion <joel.dion@mrc-maskinonge.qc.ca>\n"
 "Language: fr_CA\n"
@@ -102,6 +102,9 @@ msgstr "Code postal"
 
 msgid "Google Maps URL"
 msgstr "URL Google Maps"
+
+msgid "Coordinates"
+msgstr "Coordonnées"
 
 msgid "Map"
 msgstr "Carte"
