@@ -66,16 +66,26 @@ function initMap() {
         let mapZoom = 10;
         if (window.innerWidth <= 767) mapZoom = 9;
 
-        const mapTypeStyles = [{
-            featureType: "all",
-            elementType: "labels.text.fill",
-            stylers: [
-                {
-                    color: "#446D2B",                    
-                },
-            ],
-            
-        }, ];
+        const mapTypeStyles = [
+            {
+                featureType: "all",
+                elementType: "labels.text.fill",
+                stylers: [
+                    {
+                        color: "#446D2B",
+                    },
+                ]         
+            },
+            {
+                featureType: "poi",
+                elementType: "labels",
+                stylers: [
+                    {
+                        visibility: "off"
+                    },
+                ]         
+            }, 
+        ];
 
         const mapOptions = {
             center: {
