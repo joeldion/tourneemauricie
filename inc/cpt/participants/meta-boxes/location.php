@@ -85,7 +85,8 @@ function tma_participant_location_callback() {
                 <td>
                     <input type="text" size="50" id="tma-coord" name="tma-coord" value="<?php echo $coord; ?>">
                     <p>
-                        <input type="checkbox" id="tma-coord-adjust" name="tma-coord-adjust" value="1" <?php checked( '1', $coord_adjust, true ); ?>>&nbsp;Adjust coordinates
+                        <input type="checkbox" id="tma-coord-adjust" name="tma-coord-adjust" value="1" <?php checked( '1', $coord_adjust, true ); ?>>
+                        &nbsp;<?php esc_html_e( 'Adjust coordinates', TMA_DOMAIN ); ?>
                     </p>
                 </td>
             </tr>
