@@ -25,7 +25,8 @@ $font-primary: 'Poppins', 'sans-serif';
 $font-secondary: 'Ruda', 'sans-serif';
 
 // ICONS
-$icon-path: '/wp-content/themes/tourneemauricie/assets/icons/';
+// $icon-path: '/wp-content/themes/tourneemauricie/assets/icons/';
+$icon-path: '/tourneemauricie/wp-content/themes/tourneemauricie/assets/icons/';
 $icon-location: '#{$icon-path}location.svg';
 $icon-phone: '#{$icon-path}mobile.svg';
 $icon-email: '#{$icon-path}envelop.svg';
@@ -33,5 +34,5 @@ $icon-menu: '#{$icon-path}menu.svg';
 $icon-close: '#{$icon-path}cross.svg';
 
 // ILLUSTRATIONS
-$illustration-path: '/wp-content/themes/tourneemauricie/assets/illustrations/';
-// $illustration-path: '/tourneemauricie/wp-content/themes/tourneemauricie/assets/illustrations/';
+// $illustration-path: '/wp-content/themes/tourneemauricie/assets/illustrations/';
+$illustration-path: '/tourneemauricie/wp-content/themes/tourneemauricie/assets/illustrations/';

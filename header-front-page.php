@@ -34,27 +34,22 @@
             ]);
         ?>    
         <header class="header header--front-page" role="banner">
-            <div class="header__content">
-                <h1 class="header__logo">                
-                    <a href="<?php echo get_home_url(); ?>" aria-label="Accueil">
-                        <img src="<?php echo tma_logo_src(); ?>" alt="<?php echo get_bloginfo( 'title' ); ?>" title="<?php echo get_bloginfo( 'title' ); ?>" height="192" width="300">
-                    </a>                              
+            <div class="header__banner">
+                <h1>
+                    <picture>
+                        <source media="(max-width: 900px)"                                 
+                                srcset="<?php echo TMA_GLOBALS['assetsPath']; ?>img/header-mobile-transparent.png 1x,
+                                        <?php echo TMA_GLOBALS['assetsPath']; ?>img/header-mobile-transparent-2x.png 2x">
+                        <img src="<?php echo TMA_GLOBALS['assetsPath']; ?>img/header-transparent.png" 
+                            srcset="<?php echo TMA_GLOBALS['assetsPath']; ?>img/header-transparent.png 1x, 
+                                    <?php echo TMA_GLOBALS['assetsPath']; ?>img/header-transparent-2x.png 2x" 
+                            alt="<?php echo get_bloginfo( 'title' ); ?>" 
+                            title="<?php echo get_bloginfo( 'title' ); ?>">
+                    </picture>                    
                 </h1>                
+            </div>
+            <div class="header__content">
                 <h3 class="header__dates">23 et 24 septembre 2023</h3>
-                <h2 class="header__subtitle">Portes ouvertes chez près de 90 producteurs, artistes et artisans</h2>
-
-                <!-- <div class="header__text">
-                    <p>La Tournée Arts et Terroir Mauricie, un heureux mélange entre route des arts et itinéraire gourmand.</p>
-                    <p>Artistes, artisans et producteurs de la Mauricie rurale vous ouvrent leurs portes pour présenter leurs œuvres et leurs produits, et expliquer comment ils travaillent.</p>
-                    <ul class="tma-list">
-                        <li class="tma-list__item tma-list__item--garlic">                            
-                            Visiter installations, animaux et cultures, faires des dégustations et mettre la main sur des produits frais
-                        </li>
-                        <li class="tma-list__item tma-list__item--pencil-brush">
-                            Découvrir des talents et des technique, se procurer des œuvres originales créées chez nous et faire de belles rencontres en famille
-                        </li>
-                    </ul>
-                </div> -->
-                
+                <h2 class="header__subtitle">Portes ouvertes chez près de 90 producteurs, artistes et artisans</h2>                
             </div>
         </header>

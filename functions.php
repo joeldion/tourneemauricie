@@ -7,7 +7,7 @@ setlocale(LC_ALL, 'fr_CA' );
 defined( 'TMA_BASE' ) or define( 'TMA_BASE', __DIR__ . '/' );
 defined( 'TMA_URL' ) or define( 'TMA_URL', get_template_directory_uri() . '/' );
 defined( 'TMA_INC' ) or define( 'TMA_INC', TMA_BASE . 'inc/' );
-defined( 'TMA_VER' ) or define( 'TMA_VER', '1.2.1' );
+defined( 'TMA_VER' ) or define( 'TMA_VER', '1.3.0' );
 defined( 'TMA_DOMAIN' ) or define( 'TMA_DOMAIN', 'tourneemauricie' );
 defined( 'TMA_RECAPTCHA_KEY' ) or define( 'TMA_RECAPTCHA_KEY', '6LfUVhQmAAAAALQpyTsHcvvdOpmmRCeepRVE09uI' );
 defined( 'TMA_GLOBALS' ) or define( 'TMA_GLOBALS', [

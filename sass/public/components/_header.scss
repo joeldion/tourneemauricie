@@ -8,7 +8,15 @@
     justify-content: center;
     position: relative;
     background-size: cover;
-    padding: 10rem 2rem 0;
+    // padding: 10rem 2rem 0;
+
+    &--front-page {
+        display: block;
+    }
+
+    &__banner {
+        margin: 5rem 0 10rem;
+    }
 
     &__content {
         color: $color-gray-d;
@@ -17,11 +25,8 @@
         row-gap: 7rem;
         max-width: 120rem;
         z-index: 20;
-
-        @include respond(screen_767) {
-            padding: 0 1.5rem;
-        }
-
+        margin: 10rem auto 2rem;
+        padding: 0 1.5rem;
     }
 
     &__logo {
