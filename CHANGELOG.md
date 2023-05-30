@@ -21,3 +21,4 @@ Version 1.3.1
 
 1.3.1
 - Changed section and main menu layout
+- Hid Ninja Forms "required *" message
