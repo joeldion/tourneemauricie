@@ -17,5 +17,6 @@
         &copy;&nbsp;<?php echo date('Y'); ?>&nbsp;&#8209;&nbsp;<?php echo get_option( 'tma_footer_copyright_text' ); ?>
     </div>
 </footer>
+<a href="#" class="back-to-top" id="back-to-top"></a>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <?php wp_footer(); ?>

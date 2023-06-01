@@ -50,6 +50,27 @@ document.querySelectorAll('.anchor').forEach(anchor => {
     });
 });
 
+/*
+ * Back to top button
+ */
+const backToTop = document.getElementById("back-to-top");
+window.onscroll = function() {
+    let windowTop = window.pageYOffset;
+    if (windowTop > 800) {
+        backToTop.classList.add("active");
+    } else {
+        backToTop.classList.remove("active");
+    }
+};
+backToTop.addEventListener("click", function(e) {
+    e.preventDefault();
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+    });
+});
+
 // ReCaptcha
 // let reCaptchaToken = document.getElementById('recaptcha-token');
 // if (reCaptchaToken) {

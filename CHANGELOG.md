@@ -1,6 +1,6 @@
 Thème WordPress de la Tournée Arts et Terroir Mauricie
 Développement : Joël Dion
-Version 1.3.2
+Version 1.3.3
 
 1.1.0
 - Removed intro image and button
@@ -28,3 +28,7 @@ Version 1.3.2
 - Fix: double title tag
 - Added Google Analytics tracking code
 - Added JS minification
+
+1.3.3
+- Added back-to-top button
+- Added timestamp version to map json files

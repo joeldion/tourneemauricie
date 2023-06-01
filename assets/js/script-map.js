@@ -29,23 +29,24 @@ const mapLazyLoad = () => {
 
 // Get map data
 let mapData = [];
+const timestamp = new Date().getTime();
 (function ($) {
 
-    $.getJSON(globals.mapDataTypesFile, function(data) {
+    $.getJSON({url: globals.mapDataTypesFile, cache: false}, function(data) {
 
         // Get data type 'name' and 'file' from 'map-data-types.json'
         $.each(data, function(key, val) {
             let dataType = {
                 name: val.name,
                 slug: val.slug,
-                file: globals.mapDataFilePath + 'map-data-' + val.slug + '.json',
+                file: globals.mapDataFilePath + 'map-data-' + val.slug + '.json?v=' + timestamp,
                 icon: globals.assetsPath + 'icons/tma-marker.svg',
                 data: [],
                 active: true
             };
 
             // Get each data type JSON file content and store it in dataType['data']
-            $.getJSON(dataType.file, function(data) {
+            $.getJSON({url: dataType.file, cache: false}, function(data) {
                 $.each(data, function(key, val) {                    
                     dataType['data'].push(val);
                 });
