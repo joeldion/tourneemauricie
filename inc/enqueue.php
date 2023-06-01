@@ -6,8 +6,11 @@ add_action( 'admin_enqueue_scripts', 'tma_enqueue_admin_styles' );
 add_action( 'admin_enqueue_scripts', 'tma_enqueue_admin_scripts' );
 
 function tma_get_file_version() {
-    // return current_user_can( 'administrator' ) ? time() : TMA_VER;
-    return time();
+    return current_user_can( 'administrator' ) ? time() : TMA_VER;
+}
+
+function tma_get_file_extension() {
+    return current_user_can( 'administrator' ) ? '.js' : '.min.js';
 }
 
 /*
@@ -37,7 +40,7 @@ function tma_enqueue_public_scripts() {
 
     wp_enqueue_script(
         'tma-script-map',
-        TMA_URL . 'assets/js/script-map.js',
+        TMA_URL . 'assets/js/script-map' . tma_get_file_extension(),
         ['jquery', 'google-maps'],
         tma_get_file_version(),
         true
@@ -45,7 +48,7 @@ function tma_enqueue_public_scripts() {
 
     wp_enqueue_script(
         'tma-script-public',
-        TMA_URL . 'assets/js/script-public.js',
+        TMA_URL . 'assets/js/script-public' . tma_get_file_extension(),
         ['jquery', 'google-maps'],
         tma_get_file_version(),
         true

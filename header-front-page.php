@@ -47,11 +47,11 @@
                 <h1>
                     <picture>
                         <source media="(max-width: 900px)"                                 
-                                srcset="<?php echo TMA_GLOBALS['assetsPath']; ?>img/header-mobile-transparent.png 1x,
-                                        <?php echo TMA_GLOBALS['assetsPath']; ?>img/header-mobile-transparent-2x.png 2x">
-                        <img src="<?php echo TMA_GLOBALS['assetsPath']; ?>img/header-transparent.png" 
-                            srcset="<?php echo TMA_GLOBALS['assetsPath']; ?>img/header-transparent.png 1x, 
-                                    <?php echo TMA_GLOBALS['assetsPath']; ?>img/header-transparent-2x.png 2x" 
+                                srcset="<?php echo TMA_GLOBALS['assetsPath']; ?>img/header-mobile-transparent-3.png 1x,
+                                        <?php echo TMA_GLOBALS['assetsPath']; ?>img/header-mobile-transparent-3-2x.png 2x">
+                        <img src="<?php echo TMA_GLOBALS['assetsPath']; ?>img/header-transparent-3.png" 
+                            srcset="<?php echo TMA_GLOBALS['assetsPath']; ?>img/header-transparent-3.png 1x, 
+                                    <?php echo TMA_GLOBALS['assetsPath']; ?>img/header-transparent-3-2x.png 2x" 
                             alt="<?php echo get_bloginfo( 'title' ); ?>" 
                             title="<?php echo get_bloginfo( 'title' ); ?>">
                     </picture>                    

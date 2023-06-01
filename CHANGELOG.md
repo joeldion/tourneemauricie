@@ -27,3 +27,4 @@ Version 1.3.2
 - Added Google verification tag
 - Fix: double title tag
 - Added Google Analytics tracking code
+- Added JS minification
