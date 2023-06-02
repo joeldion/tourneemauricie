@@ -19,6 +19,9 @@ msgstr ""
 msgid "Parameters"
 msgstr ""
 
+msgid "Edit Content"
+msgstr ""
+
 msgid "Introduction"
 msgstr ""
 

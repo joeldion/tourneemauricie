@@ -23,7 +23,9 @@ const mapLazyLoad = () => {
     let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     if (mapPosition <= scrollPosition - 300 && !mapIsLoaded) {
         mapIsLoaded = true;
-        initMap();
+        setTimeout(function(){
+            initMap();
+        }, 100);
     }
 };
 
