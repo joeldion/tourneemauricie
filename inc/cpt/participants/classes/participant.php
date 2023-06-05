@@ -13,7 +13,8 @@ class TMAParticipant {
         $this->id = $id;
         $this->index = $index;
         $this->img_id = get_post_thumbnail_id( $this->id );
-        if ( empty( $this->img_id ) ) $this->img_id = get_option( 'tma_participants_default_image' );       
+        if ( empty( $this->img_id ) ) $this->img_id = get_option( 'tma_participants_default_image' );
+        $this->img_src = wp_get_attachment_image_url( $this->img_id, 'tma' );
         $this->img_srcset = tma_srcset( $this->img_id );
         $this->image_loading = $index <= 1 ? 'eager' : 'lazy'; // Don't lazy the first 2 images
         $this->title = get_the_title( $this->id );
