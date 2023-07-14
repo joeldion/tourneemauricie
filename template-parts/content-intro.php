@@ -17,7 +17,7 @@
     </div>
     <ul id="main-menu-list" class="menu__list">
         <li class="menu__item">
-            <a href="#">
+            <a href="/maskinonge">
                 <img src="<?php echo TMA_GLOBALS['assetsPath']; ?>img/card-maskinonge.png" 
                     srcset="<?php echo TMA_GLOBALS['assetsPath']; ?>img/card-maskinonge.png 1x, 
                             <?php echo TMA_GLOBALS['assetsPath']; ?>img/card-maskinonge-2x.png 2x" 
@@ -25,7 +25,7 @@
             </a>
         </li>
         <li class="menu__item">
-            <a href="#">
+            <a href="/mekinac">
                 <img src="<?php echo TMA_GLOBALS['assetsPath']; ?>img/card-mekinac.png" 
                     srcset="<?php echo TMA_GLOBALS['assetsPath']; ?>img/card-mekinac.png 1x, 
                             <?php echo TMA_GLOBALS['assetsPath']; ?>img/card-mekinac-2x.png 2x" 
@@ -33,7 +33,7 @@
             </a>
         </li>
         <li class="menu__item">
-            <a href="#">
+            <a href="/des-chenaux">
                 <img src="<?php echo TMA_GLOBALS['assetsPath']; ?>img/card-des-chenaux.png" 
                     srcset="<?php echo TMA_GLOBALS['assetsPath']; ?>img/card-des-chenaux.png 1x, 
                             <?php echo TMA_GLOBALS['assetsPath']; ?>img/card-des-chenaux-2x.png 2x" 
