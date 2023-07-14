@@ -3,9 +3,10 @@
 .menu {
 
     &__list {
+        width: 100%;
         list-style: none;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         margin: 5rem auto 0;
         gap: 2rem;
         text-align: center;
@@ -19,28 +20,37 @@
 
     &__item {
         min-width: 25rem;
-        padding: 0;      
-
-        > a {
-            color: $color-white;
-            height: 100%;
-            display: grid;
-            align-items: center;
+        padding: 0;        
+        transition: all .4s ease;
+        
+        img {
+            border-radius: 3rem 0 3rem;
         }
 
-        &:nth-child(1) {
-            background-color: $color-burgundy-d;            
+        &:hover {
+            transform: translateY(-1rem);            
         }
 
-        &:nth-child(2) {
-            background-color: $color-meadow-d;
-        }
+        // > a {
+        //     color: $color-white;
+        //     height: 100%;
+        //     display: grid;
+        //     align-items: center;
+        // }
 
-        &:nth-child(3) {
-            background-color: $color-orange-d;
-        }
+        // &:nth-child(1) {
+        //     background-color: $color-burgundy-d;            
+        // }
 
-        @include button();
+        // &:nth-child(2) {
+        //     background-color: $color-meadow-d;
+        // }
+
+        // &:nth-child(3) {
+        //     background-color: $color-orange-d;
+        // }
+
+        // @include button();
 
     }
 
